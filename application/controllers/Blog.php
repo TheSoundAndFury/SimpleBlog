@@ -85,7 +85,6 @@ class Blog extends CI_Controller
 						$this->blogposts();
 					}else{
 						$this->load->view('login_form');
-						
 					}
 					} else {
 						$data = array(
@@ -121,7 +120,6 @@ class Blog extends CI_Controller
 	 */
 	public function logout() 
 	{
-
 		// Removing session data
 		$sess_array = array(
 		'username' => ''
@@ -203,7 +201,6 @@ class Blog extends CI_Controller
 	 */
 	public function update()
 	{
-
 		if ($_POST)
 		{
 			// Build post object 
@@ -216,7 +213,6 @@ class Blog extends CI_Controller
 					redirect(base_url(), 'location');
 				}
 		}
-
 			//Get post from the database 
 			$id = $this->uri->segment(3);
 			$post = $this->post->getById($id);

@@ -28,7 +28,7 @@
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse" name="navbar">
           <div class="container">
             <div class="navcenter">
-              <a class="navbar-brand" href="<?php echo base_url("index.php/Blog/index") ?>">Home</a>
+              <a class="navbar-brand" href="<?php echo base_url("index.php/Blog/user_login_process") ?>">Home</a>
               <a class="navbar-brand" href="<?php echo base_url("index.php/Blog/create") ?>">New Post</a>
               <a class="navbar-brand" href="<?php echo base_url("index.php/Blog/about") ?>">About</a>
               
