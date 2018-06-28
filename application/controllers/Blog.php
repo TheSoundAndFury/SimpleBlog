@@ -2,7 +2,6 @@
 
 class Blog extends CI_Controller
 {
-
 	public function __construct()
 	{
 		parent::__construct();	
@@ -27,17 +26,23 @@ class Blog extends CI_Controller
 	
 	}
 
-// Show login page
+	/**
+	 * Show login page
+	 */
 	public function index() {
 		$this->load->view('login_form');
 	}
 
-	// Show registration page
+	/**
+	 * Show registration page
+	 */
 	public function user_registration_show() {
 		$this->load->view('registration_form');
 	}
 
-	// Validate and store registration data in database
+	/**
+	 *Validate and store registration data in database
+	 */
 	public function new_user_registration() {
 
 				// Check validation for user input in SignUp form
@@ -66,7 +71,9 @@ class Blog extends CI_Controller
 		}
 	}
 
-	// Check for user login process
+	/**
+	 * Check for user login process
+	 */
 	public function user_login_process() {
 
 				$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
@@ -109,7 +116,9 @@ class Blog extends CI_Controller
 		}
 	}
 
-	// Logout from admin page
+	/**
+	 * Logout from admin page
+	 */
 	public function logout() 
 	{
 
@@ -123,7 +132,9 @@ class Blog extends CI_Controller
 		$this->load->view('login_form', $data);
 	}
 
-
+	/**
+	 * Show all Blog Posts for User
+	 */
 	public function blogposts()
 	{
 		//Get data from the model
@@ -136,6 +147,9 @@ class Blog extends CI_Controller
 		$this->load->view('footer');
 	}
 
+	/**
+	 * Show Single post
+	 */
 	public function read()
 	{
 		//Get id from uri
@@ -150,6 +164,9 @@ class Blog extends CI_Controller
 		$this->load->view('footer'); 
 	}
 
+	/**
+	 * Create a new post
+	 */
 	public function create() 
 	{
 		if($_POST)
@@ -181,6 +198,9 @@ class Blog extends CI_Controller
 		$this->load->view('footer'); 
 	}
 
+	/**
+	 * Update an exsisting post.
+	 */
 	public function update()
 	{
 
@@ -212,6 +232,10 @@ class Blog extends CI_Controller
 			$this->load->view('upsert', $data);
 			$this->load->view('footer'); 	
 	}
+
+	/**
+	 * Delete a post
+	 */
 	public function delete()
 		{
 			$post = new Post_model();
@@ -222,6 +246,9 @@ class Blog extends CI_Controller
 
 		}
 
+	/**
+	 * Show about page. 
+	 */
 	public function about()
 	{
 			//Load views
