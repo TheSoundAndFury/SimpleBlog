@@ -2,8 +2,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css"/>
 	<?php
 	if (isset($this->session->userdata['logged_in'])) {
-        $this->blogposts();
-		//header("location: http://www.cooperlabs.tech.cinemaquick.com/index.php/blog/user_login_process");
+		header("location: index.php/blog/user_login_process");
 	}
 	?>
 	<head>

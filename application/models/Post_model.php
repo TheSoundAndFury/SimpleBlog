@@ -51,7 +51,6 @@ class Post_model extends CI_Model
 	 */
 	private function update($post)
 	{
-		
 		$this->db->set('title', $this->title);
 		$this->db->set('content', $this->content);
 		$this->db->where('id', $this->id);

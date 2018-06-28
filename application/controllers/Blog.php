@@ -177,6 +177,7 @@ class Blog extends CI_Controller
 		
 
 			if ($post->save()) {
+				var_dump("Whatr you doing?");
 				redirect(base_url(), 'location');
 			}
 
