@@ -247,7 +247,7 @@ class Blog extends CI_Controller
 		}
 
 	/**
-	 * Show about page. 
+	 * Show about page.
 	 */
 	public function about()
 	{

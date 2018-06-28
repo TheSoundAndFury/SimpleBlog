@@ -2,7 +2,12 @@
 
 Class Login_database extends CI_Model {
 
-	// Insert registration data in database
+	//
+	/**
+	 * Insert registration data in database
+	 * @param $data
+	 * @return bool
+	 */
 	public function registration_insert($data) {
 
 		// Query to check whether username already exist or not
@@ -24,7 +29,11 @@ Class Login_database extends CI_Model {
 		}
 	}
 
-	// Read data using username and password
+	/**
+	 * Read data using username and password
+	 * @param $data
+	 * @return bool
+	 */
 	public function login($data) {
 
 		$condition = "user_name =" . "'" . $data['username'] . "' AND " . "user_password =" . "'" . $data['password'] . "'";
@@ -41,7 +50,12 @@ Class Login_database extends CI_Model {
 		}
 	}
 
-	// Read data from database to show data in admin page
+
+	/**
+	 * Read data from database to show data in admin page
+	 * @param $username
+	 * @return bool
+	 */
 	public function read_user_information($username) {
 
 		$condition = "user_name =" . "'" . $username . "'";

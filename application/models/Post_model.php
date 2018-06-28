@@ -11,6 +11,10 @@ class Post_model extends CI_Model
 
 	}
 
+	/**
+	 * Get all posts from the database
+	 * @return mixed
+	 */
 	public function getAll()
 	{
 		$query = $this->db->order_by('id DESC');
@@ -19,17 +23,32 @@ class Post_model extends CI_Model
 		return $query->result();
 	}
 
+	/**
+	 * Get posts by post id
+	 * @param $id
+	 * @return mixed
+	 */
 	public function getById($id)
 	{
 		$query = $this->db->get_where('post',array('id' => $id));
 		return $query->row();
 	}
 
+	/**
+	 * Insert a new post to the database.
+	 * @param $post
+	 * @return mixed
+	 */
 	private function insert($post)
 	{
 		return $this->db->insert('post', $this);
 	}
 
+	/**
+	 * Update a post.
+	 * @param $post
+	 * @return mixed
+	 */
 	private function update($post)
 	{
 		
@@ -39,12 +58,20 @@ class Post_model extends CI_Model
 		return $this->db->update('post');
 	}
 
+	/**
+	 * Delete a post
+	 * @return mixed
+	 */
 	public function delete()
 	{
 		$this->db->where('id', $this->id);
 		return $this->db->delete('post');
 	}
 
+	/**
+	 * Save Changes
+	 * @return mixed
+	 */
 	public function save()
 	{
 		if(isset($this->id)) {
